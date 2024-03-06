@@ -8,13 +8,17 @@ package lesson_1
 - Выведи в консоль время, проведенное в космосе в формате [часы:минуты:секунды], например так: 01:30:09;
 - Значения часов, минут и секунд отображать двумя цифрами.*/
 
+const val NUMBER_OF_SECONDS_IN_AN_HOUR = 3600
+const val NUMBER_OF_MINUTES_IN_AN_HOUR = 60
+const val NUMBER_OF_SECONDS_IN_AN_MINUTE = 60
+
 fun main() {
 
     val generalSeconds = 6480
 
-    val hour = generalSeconds / 3600
-    val minute = (generalSeconds % 3600) / 60
-    val seconds = generalSeconds % 60
+    val hour = generalSeconds / NUMBER_OF_SECONDS_IN_AN_HOUR
+    val minute = (generalSeconds % NUMBER_OF_SECONDS_IN_AN_HOUR) / NUMBER_OF_MINUTES_IN_AN_HOUR
+    val seconds = generalSeconds % NUMBER_OF_SECONDS_IN_AN_MINUTE
 
     val time = String.format("%02d:%02d:%02d", hour, minute, seconds)
 
