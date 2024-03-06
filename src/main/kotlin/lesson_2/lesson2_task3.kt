@@ -10,6 +10,8 @@ package lesson_2
  – Напиши программу, которая обработает данные и подсчитает час и минуту прибытия поезда;
  – Выведи результат в консоль.*/
 
+const val NUMBER_OF_MINUTES_IN_AN_HOUR = 60
+
 fun main() {
     val checkOutHour = 9
     val checkOutMinute = 39
@@ -19,8 +21,8 @@ fun main() {
     val time = java.time.LocalTime.of(checkOutHour, checkOutMinute)
 
     // Перевод минут в часы и минуты
-    val travelHour = travelTime / 60
-    val travelMinute = travelTime % 60
+    val travelHour = travelTime / NUMBER_OF_MINUTES_IN_AN_HOUR
+    val travelMinute = travelTime % NUMBER_OF_MINUTES_IN_AN_HOUR
 
     // Прибавление ко времени старта времени в пути
     var arrivalTime = time.plusHours(travelHour.toLong())
