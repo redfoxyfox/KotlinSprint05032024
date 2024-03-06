@@ -22,18 +22,18 @@ package lesson_1
 fun main() {
 
     val year = 1961
-    var hour = 9
-    var minute = 7
+    val timeStart = "09:07" //  с сервера пришла строка
+    val timeFinish = "10:55" // с сервера пришла строка
+
+    var hour = "${timeStart[0]}${timeStart[1]}"
+    var minute = "${timeStart[3]}${timeStart[4]}"
 
     println(year)
     println(hour)
-    println("0$minute")
+    println(minute)
 
-    hour = 10
-    minute = 55
+    hour = "${timeFinish[0]}${timeFinish[1]}"
+    minute = "${timeFinish[3]}${timeFinish[4]}"
 
     println("$hour:$minute")
-
-
-
 }
