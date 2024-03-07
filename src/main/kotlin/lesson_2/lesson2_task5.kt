@@ -15,15 +15,17 @@ import kotlin.math.pow
  – Ответ должен получиться таким 1536438.428.*/
 
 const val NUMBER_OF_ACCRUALS_PER_YEAR = 1
+const val CONVERSION_TO_PERCENTAGE = 100
 
 fun main() {
 
     val sum = 70_000
-    val interestRate = 0.167
+    val interestRate = 16.7
     val depositTerm = 20
 
+    val interestRateToPercent = interestRate / CONVERSION_TO_PERCENTAGE
     val resultAfter20Years =
-        sum * ((1 + interestRate / NUMBER_OF_ACCRUALS_PER_YEAR)).pow(NUMBER_OF_ACCRUALS_PER_YEAR * depositTerm)
+        sum * ((1 + interestRateToPercent / NUMBER_OF_ACCRUALS_PER_YEAR)).pow(NUMBER_OF_ACCRUALS_PER_YEAR * depositTerm)
 
     println(String.format("%.3f", resultAfter20Years))
 
