@@ -12,12 +12,30 @@ package lesson_3
 fun main() {
 
     val move = "D2-D4;0"
+    val moveToList = move.split("-", ";")
+    val start = moveToList[0]
+    val finish = moveToList[1]
+    val number = moveToList[2]
+
+    println(start)
+    println(finish)
+    println(number)
+
+/*    Второе решение
+    val move = "D2-D4;0"
+    val moveToList = move.split("-", ";")
+
+    moveToList.forEach{
+        println(it)
+    }*/
+
+/* Первое решение
+val move = "D2-D4;0"
     val start = "${move[0]}${move[1]}"
     val finish = "${move[3]}${move[4]}"
     val number = move[6]
 
     println(start)
     println(finish)
-    println(number)
-
+    println(number)*/
 }
