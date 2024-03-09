@@ -23,10 +23,10 @@ package lesson_4
 
 И типами данных - boolean, boolean, int, String.*/
 
-const val SUNNY_WEATHER = true
-const val OPEN_TENT = true
+const val IS_SUNNY = true
+const val IS_AWNING_OPEN = true
 const val AIR_HUMIDITY = 20
-const val SEASON = "не зима"
+const val IS_WINTER = "зима"
 
 fun main() {
 
@@ -35,7 +35,7 @@ fun main() {
     val airHumidity = 20
     val seasonNow = "зима"
 
-    val check = weatherToday == SUNNY_WEATHER && tentToday == OPEN_TENT && airHumidity == AIR_HUMIDITY && seasonNow == SEASON
+    val check = weatherToday == IS_SUNNY && tentToday == IS_AWNING_OPEN && airHumidity == AIR_HUMIDITY && seasonNow !== IS_WINTER
 
     println("Благоприятные ли условия сейчас для роста бобовых? $check")
 
