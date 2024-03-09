@@ -13,12 +13,12 @@ package lesson_3
 fun main() {
 
     val name = "Сергей"
-    var greetings = "Добрый день, "
+    var greetings = "Добрый день"
 
-    println(greetings + name)
+    println("$greetings, $name")
 
-    greetings = "Добрый вечер, "
+    greetings = "Добрый вечер"
 
-    println(greetings + name)
+    println("$greetings, $name")
 
 }
