@@ -12,7 +12,7 @@ package lesson_2
 
 Если получается нецелое число, то дробная часть должна отбрасываться.*/
 
-const val CONVERSION_TO_PERCENTAGE = 100
+const val _CONVERSION_TO_PERCENTAGE = 100
 
 fun main() {
 
@@ -20,7 +20,7 @@ fun main() {
     val ironOre = 11
     val buff = 20
 
-    val buffPercent = buff.toFloat() / CONVERSION_TO_PERCENTAGE
+    val buffPercent = buff.toFloat() / _CONVERSION_TO_PERCENTAGE
 
     val bonusCrystalOre = (crystalOre * buffPercent).toInt()
     val bonusIronOre = (ironOre * buffPercent).toInt()
