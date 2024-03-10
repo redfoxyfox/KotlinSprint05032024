@@ -24,9 +24,9 @@ fun main() {
     val guessedZeroNumbers = "Неудача!"
 
     print(messageFirstNumber)
-    val userNumber1 = readLine()!!.toInt()
+    val userNumber1 = readln().toInt()
     print(messageSecondNumber)
-    val userNumber2 = readLine()!!.toInt()
+    val userNumber2 = readln().toInt()
 
     if ((userNumber1 == hiddenNumber1 || userNumber1 == hiddenNumber2) && (userNumber2 == hiddenNumber1 || userNumber2 == hiddenNumber2))
         println(guessedTwoNumbers)
@@ -50,9 +50,9 @@ fun main() {
     val guessedZeroNumbers = "Неудача!"
 
     print(messageFirstNumber)
-    val userNumber1 = readLine()!!.toInt()
+    val userNumber1 = readln().toInt()
     print(messageSecondNumber)
-    val userNumber2 = readLine()!!.toInt()
+    val userNumber2 = readln().toInt()
 
     when {
         userNumber1 in listHiddenNumbers && userNumber2 in listHiddenNumbers -> println(guessedTwoNumbers)
