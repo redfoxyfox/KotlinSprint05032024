@@ -24,7 +24,7 @@ fun main() {
     val messageUnsuccessful = "Вернуться на главный экран"
 
     println(messageGreeting)
-    val userYear = readLine()!!.toInt()
+    val userYear = readln().toInt()
     val userAge = currentYear - userYear
 
     if (userAge >= AGE_OF_MAJORITY) println(messageSuccessful)
