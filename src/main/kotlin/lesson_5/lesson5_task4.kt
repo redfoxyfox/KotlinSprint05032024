@@ -36,11 +36,11 @@ fun main() {
     val registration = "Такого пользователя не существует. Зарегистрируйтесь."
 
     println(usernameRequest)
-    val userName = readLine()
+    val userName = readln()
 
     if (userName == REGISTERED_USER_NAME) {
         println(userPasswordRequest)
-        val userPassword = readLine()
+        val userPassword = readln()
         if (userPassword == REGISTERED_USER_PASSWORD)
             println(successfulLogin)
         else println(wrongPassword)
