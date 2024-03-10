@@ -26,29 +26,30 @@ package lesson_4
 эти данные и выводить результат в консоль. Для анализа должно использоваться единое составное условие, состоящее
 только из логических операторов.*/
 
-const val NOT_DAMAGE = true
-const val TEAM_MIN = 55
-const val TEAM_MAX = 70
-const val PROVISION = 50
-const val GOOD_WEATHER = true
-const val RECOMMENDED_TEAM = 70
+const val IS_NOT_DAMAGE = true
+const val MINIMUM_NUMBER_OF_TEAM = 55
+const val MAXIMUM_NUMBER_OF_TEAM = 70
+const val RECOMMENDED_NUMBER_OF_PROVISION_BOXES = 50
+const val IS_GOOD_WEATHER = true
+const val RECOMMENDED_NUMBER_OF_TEAM = 70
 
 fun main() {
     println("Подтвердите отсутствие повреждений корабля: true/false")
-    val damageNow = readLine().toBoolean()
+    val damageNow = readln().toBoolean()
 
     println("Введите состав экипажа")
-    val teamNow = readLine()!!.toInt()
+    val teamNow = readln().toInt()
 
     println("Введите количество ящиков на борту с провизией")
-    val provisionNow = readLine()!!.toInt()
+    val provisionNow = readln().toInt()
 
     println("Введите благоприятность метеоусловий: true/false")
-    val goodWeatherNow = readLine().toBoolean()
+    val goodWeatherNow = readln().toBoolean()
 
-    val permission = (damageNow == NOT_DAMAGE && teamNow >= TEAM_MIN && teamNow <= TEAM_MAX && provisionNow > PROVISION
-            && goodWeatherNow == GOOD_WEATHER) || (teamNow == RECOMMENDED_TEAM && goodWeatherNow == GOOD_WEATHER
-            && provisionNow >= PROVISION)
+    val permission = (damageNow == IS_NOT_DAMAGE && teamNow >= MINIMUM_NUMBER_OF_TEAM &&
+            teamNow <= MAXIMUM_NUMBER_OF_TEAM && provisionNow > RECOMMENDED_NUMBER_OF_PROVISION_BOXES &&
+            goodWeatherNow == IS_GOOD_WEATHER) || (teamNow == RECOMMENDED_NUMBER_OF_TEAM &&
+            goodWeatherNow == IS_GOOD_WEATHER && provisionNow >= RECOMMENDED_NUMBER_OF_PROVISION_BOXES)
 
     println("Корабль может отправляться в плавание: $permission")
 
