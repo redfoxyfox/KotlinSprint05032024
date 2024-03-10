@@ -21,7 +21,7 @@ fun main() {
     println(messageGreeting)
     print(example)
 
-    val result = readLine()?.toInt()
+    val result = readln().toInt()
 
     if (result == number1 + number2)
         println(checkSuccessful)
