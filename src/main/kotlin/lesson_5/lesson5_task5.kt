@@ -26,19 +26,11 @@ fun main() {
     val hiddenNumber3 = range.random()
     val listHiddenNumbers = listOf(hiddenNumber1, hiddenNumber2, hiddenNumber3)
 
-    val messageFirstNumber = "Введите первое число: "
-    val messageSecondNumber = "Введите второе число: "
-    val messageThirdNumber = "Введите третье число: "
-    val guessedThreeNumbers = "Поздравляем! Вы угадали все числа и выиграли джекпот!"
-    val guessedTwoNumbers = "Вы угадали два числа и получаете крупный приз!"
-    val guessedOneNumber = "Вы угадали одно число и вам выплачивается утешительный приз!"
-    val guessedZeroNumbers = "Вы не угадали ни одного числа."
-
-    print(messageFirstNumber)
+    print("Введите первое число: ")
     val userNumber1 = readln().toInt()
-    print(messageSecondNumber)
+    print("Введите второе число: ")
     val userNumber2 = readln().toInt()
-    print(messageThirdNumber)
+    print("Введите третье число: ")
     val userNumber3 = readln().toInt()
 
     val listUserNumbers = listOf(userNumber1, userNumber2, userNumber3)
@@ -46,10 +38,10 @@ fun main() {
     val intersectedNumbersSize = intersectedNumbers.size
 
     when (intersectedNumbersSize) {
-        3 -> println(guessedThreeNumbers)
-        2 -> println(guessedTwoNumbers)
-        1 -> println(guessedOneNumber)
-        0 -> println(guessedZeroNumbers)
+        3 -> println("Поздравляем! Вы угадали все числа и выиграли джекпот!")
+        2 -> println("Вы угадали два числа и получаете крупный приз!")
+        1 -> println("Вы угадали одно число и вам выплачивается утешительный приз!")
+        0 -> println("Вы не угадали ни одного числа.")
     }
 
     println("Выигрышные числа: $hiddenNumber1, $hiddenNumber2, $hiddenNumber3")
