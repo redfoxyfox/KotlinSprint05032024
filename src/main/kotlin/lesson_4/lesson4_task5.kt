@@ -35,7 +35,7 @@ const val RECOMMENDED_NUMBER_OF_TEAM = 70
 
 fun main() {
     println("Подтвердите отсутствие повреждений корабля: true/false")
-    val damageNow = readln().toBoolean()
+    val isDamageNow = readln().toBoolean()
 
     println("Введите состав экипажа")
     val teamNow = readln().toInt()
@@ -44,12 +44,16 @@ fun main() {
     val provisionNow = readln().toInt()
 
     println("Введите благоприятность метеоусловий: true/false")
-    val goodWeatherNow = readln().toBoolean()
+    val isGoodWeatherNow = readln().toBoolean()
 
-    val permission = (damageNow == IS_NOT_DAMAGE && teamNow >= MINIMUM_NUMBER_OF_TEAM &&
-            teamNow <= MAXIMUM_NUMBER_OF_TEAM && provisionNow > RECOMMENDED_NUMBER_OF_PROVISION_BOXES &&
-            goodWeatherNow == IS_GOOD_WEATHER) || (teamNow == RECOMMENDED_NUMBER_OF_TEAM &&
-            goodWeatherNow == IS_GOOD_WEATHER && provisionNow >= RECOMMENDED_NUMBER_OF_PROVISION_BOXES)
+    val permission = (isDamageNow == IS_NOT_DAMAGE &&
+            teamNow >= MINIMUM_NUMBER_OF_TEAM &&
+            teamNow <= MAXIMUM_NUMBER_OF_TEAM &&
+            provisionNow > RECOMMENDED_NUMBER_OF_PROVISION_BOXES &&
+            isGoodWeatherNow == IS_GOOD_WEATHER) ||
+            (teamNow == RECOMMENDED_NUMBER_OF_TEAM &&
+            isGoodWeatherNow == IS_GOOD_WEATHER &&
+            provisionNow >= RECOMMENDED_NUMBER_OF_PROVISION_BOXES)
 
     println("Корабль может отправляться в плавание: $permission")
 
