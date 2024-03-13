@@ -20,6 +20,6 @@ fun main() {
         val userIngredient = readln()
         arrayIngredients += userIngredient
     }
-println(arrayIngredients.contentToString())
+    println(arrayIngredients.contentToString())
 
 }
