@@ -21,15 +21,12 @@ fun main() {
     println("Какой ингредиент хотите заменить?")
     var userIngredientReplace = readln()
 
-    while (!setOfSaladIngredients.contains(userIngredientReplace)) {
+    while (userIngredientReplace !in setOfSaladIngredients) {
         println("Такого ингредиента нет")
         println("Какой ингредиент хотите заменить?")
         userIngredientReplace = readln()
     }
     println("Какой ингредиент хотите добавить?")
-    /*    if (setOfSaladIngredients.contains(userIngredientReplace)) {
-            println("Какой ингредиент хотите добавить?")
-        } else println("Такого ингредиента нет")*/
 
     val userIngredientAdd = readln()
 
