@@ -17,26 +17,11 @@ fun main() {
     val setOfSaladIngredients = arrayOf("листья салата", "масло", "капуста")
 
     println("Какой ингредиент хочешь найти? ")
-    val userIngridient = readln()
+    val userIngredient = readln()
 
-    for (i in setOfSaladIngredients) {
-
-        if (setOfSaladIngredients.contains(userIngridient)) {
-            println("Ингредиент \"$userIngridient\" в рецепте есть")
-            return
-        }
-        else {
-            println("Такого ингредиента в рецепте нет")
-            return
-        }
-    }
-
-/*    Можно цикл убрать, оставив
-    if (setOfSaladIngredients.contains(userIngridient)) {
-        println("Ингредиент \"$userIngridient\" в рецепте есть")
-    }
-    else {
+    if (setOfSaladIngredients.contains(userIngredient)) {
+        println("Ингредиент \"$userIngredient\" в рецепте есть")
+    } else {
         println("Такого ингредиента в рецепте нет")
-    }*/
-
+    }
 }
