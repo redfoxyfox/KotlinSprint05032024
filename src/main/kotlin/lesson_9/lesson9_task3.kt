@@ -16,9 +16,11 @@ fun main() {
     val listQuantityIngredients = mutableListOf(3, 50, 15)
     println("Укажите количество порций")
     val userQuantityOfServings = readln().toInt()
-    for (i in 0..<listQuantityIngredients.size) {
-        listQuantityIngredients[i] = listQuantityIngredients[i] * userQuantityOfServings
-    }
-    println("На $userQuantityOfServings порций вам понадобится: Яиц – ${listQuantityIngredients[0]}, молока – ${listQuantityIngredients[1]}, сливочного масла – ${listQuantityIngredients[2]}")
+    val listQuantityIngredientsForUserPortions = listQuantityIngredients.map { it * userQuantityOfServings }
+
+    println(
+        "На $userQuantityOfServings порций вам понадобится: Яиц – ${listQuantityIngredientsForUserPortions[0]}, " +
+                "молока – ${listQuantityIngredientsForUserPortions[1]}, сливочного масла – ${listQuantityIngredientsForUserPortions[2]}"
+    )
 
 }
