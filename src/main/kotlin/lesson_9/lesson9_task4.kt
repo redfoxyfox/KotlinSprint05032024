@@ -14,12 +14,7 @@ fun main() {
 
     println("Напишите 5 ингредиентов, перечислив их через запятую. Не забывайте после запятой ставить пробелы.")
 
-    /*получаем данные пользователя и убираем пробелы после запятой. Если этого не сделать, то в отсортированном по алфавиту
-    списке перед элементами будут лишние пробелы*/
-
-    val listIngredients = readln().replace(", ", ",")
-
-    val listIngredients1 = listIngredients.split(',')
-    println(listIngredients1.sorted())
+    val listIngredients = readln().split(", ")
+    println(listIngredients.sorted())
 
 }
