@@ -1,4 +1,4 @@
-package lesson_1
+package lesson_1_10.lesson_1
 
 /*Задача 1 к Уроку 1
 
