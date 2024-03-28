@@ -21,7 +21,7 @@ fun main() {
 
 fun passwordGeneration(userLengthPassword: Int): String {
     val numberInterval = 0..9
-    val arrayCharacters = arrayOf('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ' ')
+    val arrayCharacters = ' '..'/'
     var stringPassword = ""
     var counter = 0
 
