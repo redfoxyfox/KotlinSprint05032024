@@ -16,10 +16,11 @@ fun main() {
     println("Введите пароль")
     val userPassword = readln()
 
-    if (!checkLength(userLogin, userPassword)) println("Логин или пароль недостаточно длинные")
+    if (!checkLength(userLogin) || !checkLength(userPassword)) println("Логин или пароль недостаточно длинные")
+    else println("Всё верно!")
 
 }
 
-fun checkLength(userLogin: String, userPassword: String): Boolean {
-    return !(userLogin.count() < 4 || userPassword.count() < 4)
+fun checkLength(userString: String): Boolean {
+    return userString.length >= 4
 }
