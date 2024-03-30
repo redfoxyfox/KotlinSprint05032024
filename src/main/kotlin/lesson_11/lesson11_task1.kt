@@ -5,6 +5,13 @@ package lesson_11
 идентификаторе, логине, пароле и почте. Названием может быть, например, User. Создай два экземпляра класса с
 произвольными данными и выведи в консоль содержимое их полей.*/
 
+class User(
+    val id: Int,
+    val login: String,
+    val password: String,
+    val email: String,
+)
+
 fun main() {
 
     val user1 = User(
