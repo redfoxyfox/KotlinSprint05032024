@@ -18,11 +18,14 @@ package lesson_13
 class SubscriberBook(
     val name: String,
     val number: Long,
-    var company: String? = null ?: "не указано",
+    var company: String? = null,
 ) {
+
     fun printSubscriber() {
+        if (company == null) company = "не указано"
         println("- Имя: $name \n- Номер: $number \n- Компания: $company")
     }
+
 }
 
 fun main() {
