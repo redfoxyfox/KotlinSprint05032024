@@ -14,7 +14,7 @@ package lesson_13
 class SubscriberPhonebook(
     val name: String,
     val number: Long,
-    var company: String?,
+    var company: String? = null,
 )
 
 fun main() {
@@ -22,13 +22,17 @@ fun main() {
     val subscriber1 = SubscriberPhonebook("Вася", 5555662555, "null")
     val subscriber2 = SubscriberPhonebook("Петя", 3221178827, "OOO Зеленоглазое такси")
     val subscriber3 = SubscriberPhonebook("Коля", 1182757885, "OOO детка")
-    val subscriber4 = SubscriberPhonebook("Дима", 7581854128, null)
-    val subscriber5 = SubscriberPhonebook("Саша", 4288171841, null)
+    val subscriber4 = SubscriberPhonebook("Дима", 7581854128)
+    val subscriber5 = SubscriberPhonebook("Саша", 4288171841)
 
     val listSubscribers = listOf(subscriber1, subscriber2, subscriber3, subscriber4, subscriber5)
 
-    for (i in listSubscribers) {
-        if (i.company != null) println(i.company)
-    }
+    // Печатаем названия компаний
+    println(listSubscribers.mapNotNull { if (it.company == null) null else it.company })
+
+    /*    Второй вариант отсечения всех null элементов
+        for (i in listSubscribers) {
+            if (i.company != null) println(i.company)
+        }*/
 
 }
