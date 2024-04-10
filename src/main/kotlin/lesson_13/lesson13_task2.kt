@@ -22,7 +22,8 @@ class SubscriberBook(
 ) {
 
     fun printSubscriber() {
-        if (company == null) company = "не указано"
+        company = company ?: "не указано"
+
         println("- Имя: $name \n- Номер: $number \n- Компания: $company")
     }
 
