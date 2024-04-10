@@ -23,6 +23,8 @@ fun main() {
         val userNumber = readln().toLong()
     } catch (e: Exception) {
         println(e.message)
+        for (i in e.stackTrace)
+            println(i)
     }
 
 }
