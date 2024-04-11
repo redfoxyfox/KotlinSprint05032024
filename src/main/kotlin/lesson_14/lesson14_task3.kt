@@ -29,7 +29,7 @@ abstract class Figure(
 
     abstract fun calculateArea(): Double
     abstract fun calculatePerimeter(): Double
-    
+
 }
 
 class Circle(
@@ -63,6 +63,9 @@ class Rectangle(
 
 }
 
+const val BLACK_FIGURE = "Черный"
+const val WHITE_FIGURE = "Белый"
+
 fun main() {
 
     val circleWhite = Circle("Белый", 2.0)
@@ -74,14 +77,13 @@ fun main() {
     var sumOfPerimetersOfBlackFigures = 0.0 // начальное значение суммы периметров всех черных фигур
     var sumOfAreasOfWhiteFigures = 0.0 // начальное значение суммы площадей всех белых фигур
 
-    listFigures.map {
-        if (it.color == "Черный")
-            sumOfPerimetersOfBlackFigures += it.calculatePerimeter()
-    }
 
-    listFigures.map {
-        if (it.color == "Белый")
-            sumOfAreasOfWhiteFigures += it.calculateArea()
+    listFigures.forEach {
+        when (it.color) {
+            BLACK_FIGURE -> sumOfPerimetersOfBlackFigures += it.calculatePerimeter()
+            WHITE_FIGURE -> sumOfAreasOfWhiteFigures += it.calculateArea()
+            else -> return
+        }
     }
 
     println("Сумма периметров всех черных фигур: ${"%.2f".format(sumOfPerimetersOfBlackFigures)} ")
