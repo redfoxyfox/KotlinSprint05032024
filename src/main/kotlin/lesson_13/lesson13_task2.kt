@@ -22,9 +22,7 @@ class SubscriberBook(
 ) {
 
     fun printSubscriber() {
-        company = company ?: "не указано"
-
-        println("- Имя: $name \n- Номер: $number \n- Компания: $company")
+        println("- Имя: $name \n- Номер: $number \n- Компания: ${company ?: "не указано"}")
     }
 
 }
