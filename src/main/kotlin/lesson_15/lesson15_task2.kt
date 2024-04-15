@@ -3,8 +3,8 @@ package lesson_15
 /*
 Задача 2 к Уроку 15
 
-Необходимо разработать простую систему мониторинга погодных условий, которая будет собирать данные о температуре и количестве осадков.
-
+Необходимо разработать простую систему мониторинга погодных условий, которая будет собирать данные о температуре и
+количестве осадков.
 
 Создай абстрактный класс WeatherStationStats. Он будет служить родителем для классов-объектов погодных данных:
 Temperature и PrecipitationAmount.
@@ -16,12 +16,6 @@ Temperature и PrecipitationAmount.
 
 abstract class WeatherStationStats {
     abstract val weatherData: Any
-
-    fun sendingData() {
-        if (weatherData is Int) println("Температура сейчас $weatherData градусов")
-        else if (weatherData is String) println("Сейчас $weatherData осадков")
-    }
-
 }
 
 class Temperature(
@@ -32,13 +26,27 @@ class PrecipitationAmount(
     override val weatherData: String,
 ) : WeatherStationStats()
 
+class WeatherServer() {
+
+    fun sendingData(weatherData: WeatherStationStats) {
+        when (weatherData.weatherData) {
+            is Int -> println("Температура сейчас ${weatherData.weatherData} градусов")
+            is String -> println("Сейчас ${weatherData.weatherData} осадков")
+        }
+    }
+
+}
+
 fun main() {
 
     val temperature = Temperature(15)
     val precipitationAmount = PrecipitationAmount("мало")
 
-    temperature.sendingData()
-    precipitationAmount.sendingData()
+    val weatherServer = WeatherServer()
+
+    weatherServer.sendingData(temperature)
+    weatherServer.sendingData(precipitationAmount)
+
 }
 
 
