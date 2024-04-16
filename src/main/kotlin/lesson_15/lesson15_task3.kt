@@ -1,7 +1,5 @@
 package lesson_15
 
-import lesson_11.User
-
 /*Задача 3 к Уроку 15
 
 На форуме есть два типа пользователей – обычные пользователи и администраторы.
@@ -11,7 +9,7 @@ import lesson_11.User
 Опиши классы для сущностей пользователей и администраторов, используя абстрактный класс. У абстрактного класса
 должны быть соответствующие общие поля и методы. Действия на форуме отобрази сообщениями в консоль*/
 
-abstract class ForumParticipants {
+abstract class ForumParticipant {
     abstract val nameUser: String
     abstract val password: Int
 
@@ -19,10 +17,10 @@ abstract class ForumParticipants {
     abstract fun readForum()
 }
 
-class Users(
+class User(
     override val nameUser: String,
     override val password: Int,
-) : ForumParticipants() {
+) : ForumParticipant() {
 
     override fun writeMessages() {
         println("Пользователь $nameUser написал сообщение")
@@ -34,10 +32,10 @@ class Users(
 
 }
 
-class Administrators(
+class Administrator(
     override val nameUser: String,
     override val password: Int,
-) : ForumParticipants() {
+) : ForumParticipant() {
 
     override fun writeMessages() {
         println("Администратор $nameUser написал сообщение")
