@@ -18,7 +18,7 @@ interface Search {
 
 }
 
-open class Product(
+abstract class Product(
     val nameProduct: String,
     val quantity: Int,
 ) : Search
@@ -42,7 +42,6 @@ fun main() {
     val component3 = Component("Клавиши", 1, "Фортепиано")
 
     musicalInstrument1.search()
-
 
 }
 
