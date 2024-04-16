@@ -18,25 +18,31 @@ interface Search {
 
 }
 
-class MusicalInstruments(
-    val nameMusicalInstrument: String,
+open class Product(
+    val nameProduct: String,
     val quantity: Int,
-) : Search {}
+) : Search
 
-class Components(
-    val nameComponent: String,
-    val quantity: Int,
+class MusicalInstrument(
+    nameProduct: String,
+    quantity: Int,
+) : Product(nameProduct, quantity)
+
+class Component(
+    nameProduct: String,
+    quantity: Int,
     val parentMusicalInstrument: String,
-)
+) : Product(nameProduct, quantity)
 
 fun main() {
 
-    val musicalInstrument1 = MusicalInstruments("Барабан", 3)
-    val component1 = Components("Палочки", 3, "Барабан")
-    val component2 = Components("Педаль", 0, "Барабан")
-    val component3 = Components("Клавиши", 1, "Фортепиано")
+    val musicalInstrument1 = MusicalInstrument("Барабан", 3)
+    val component1 = Component("Палочки", 3, "Барабан")
+    val component2 = Component("Педаль", 0, "Барабан")
+    val component3 = Component("Клавиши", 1, "Фортепиано")
 
     musicalInstrument1.search()
+
 
 }
 
