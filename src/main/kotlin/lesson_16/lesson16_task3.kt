@@ -13,17 +13,17 @@ package lesson_16
 
 class User(
     val loginUser: String,
-    private val passwordUser: Int,
+    private val passwordUser: String,
 ) {
 
     fun checkPassword(passwordUser: String): Boolean {
-        return passwordUser == this.passwordUser.toString()
+        return passwordUser == this.passwordUser
     }
 
 }
 
 fun main() {
 
-    println(User("Bob", 12345).checkPassword("12345"))
+    println(User("Bob", "12345parol").checkPassword("12345parol"))
 
 }
