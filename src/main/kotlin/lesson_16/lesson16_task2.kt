@@ -14,9 +14,9 @@ class Circle(
     private val radius: Int,
 ) {
 
-    fun circumference() = 2 * APPROXIMATE_NUMBER_PI * radius
+    fun calculateCircumference() = 2 * APPROXIMATE_NUMBER_PI * radius
 
-    fun areaOfCircle() = APPROXIMATE_NUMBER_PI * radius * radius
+    fun calculateAreaOfCircle() = APPROXIMATE_NUMBER_PI * radius * radius
 
 }
 
@@ -25,7 +25,7 @@ fun main() {
 
     val circle1 = Circle(3)
 
-    println(circle1.circumference())
-    println(circle1.areaOfCircle())
+    println(circle1.calculateCircumference())
+    println(circle1.calculateAreaOfCircle())
 
 }
