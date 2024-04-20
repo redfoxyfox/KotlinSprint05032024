@@ -15,16 +15,22 @@ class Order(
     private var readinessStatus: Boolean,
 ) {
 
-    fun changeOrderStatus(newStatus: Boolean) {
+    private fun changeOrderStatus(newStatus: Boolean) {
         readinessStatus = newStatus
     }
 
-}
-
-fun main() {
-
-    fun sendRequestToManager(newStatus: Boolean) {
-        Order(8962, false).changeOrderStatus(true)
+    fun setNewOrderStatus(newStatus: Boolean) {
+        changeOrderStatus(newStatus)
     }
 
 }
+
+
+fun main() {
+    val order1 = Order(8962, false)
+
+    order1.setNewOrderStatus(true)
+
+}
+
+
