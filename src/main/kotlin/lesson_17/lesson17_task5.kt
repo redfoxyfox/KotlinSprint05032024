@@ -17,19 +17,20 @@ class User(
 ) {
     var login: String = _login
         set(value) {
-            println("Пароль успешно изменён")
+            println("Логин успешно изменён")
             field = value
         }
 
     var password: String = _password
         get() {
-            val asterisk = ""
-            println(asterisk.padStart(_password.length, '*'))
-            return _password
+            val asterisk = "*"
+            println(asterisk.repeat(field.length))
+            // второй способ
+            // println(asterisk.padStart(_password.length, '*'))
+            return field
         }
         set(value) {
-            if (value != this._password) println("Вы не можете изменить пароль")
-            field = _password
+            println("Вы не можете изменить пароль")
         }
 }
 
