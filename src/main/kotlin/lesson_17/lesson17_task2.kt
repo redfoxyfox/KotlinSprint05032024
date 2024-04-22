@@ -8,21 +8,24 @@ package lesson_17
 
 Создай экземпляр класса и протестируй работу.*/
 
-class Ship() {
-    var nameShip: String = "Santa Maria"
-        set(value) {
-            if (value != field) println("Имя нельзя перезаписать")
-            field = value
+class Ship(
+    var _nameShip: String,
+    val _averageSpeed: Int,
+    val _port: String,
 
+    ) {
+    var nameShip: String = _nameShip
+        set(value) {
+            println("Имя нельзя перезаписать")
         }
 
-    val averageSpeed: Int = 10
-    val port: String = "Палос-де-ла-Фронтера"
+    val averageSpeed: Int = _averageSpeed
+    val port: String = _port
 }
 
 fun main() {
 
-    val ship1 = Ship()
+    val ship1 = Ship("Santa Maria", 10, "Палос-де-ла-Фронтера")
     ship1.nameShip = "Пинта"
 
 }
