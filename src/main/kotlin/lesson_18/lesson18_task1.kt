@@ -23,7 +23,7 @@ class Order() {
         numberOrder: Int,
         product: List<String>
     ) {
-        println("Заказаны товар: $product")
+        println("Заказаны товары: $product")
     }
 
 }
@@ -34,6 +34,6 @@ fun main() {
     val order2 = Order()
 
     order1.addInformationToOrder(10001, "Морковка")
-    order1.addInformationToOrder(10002, listOf("Капуста", "Петрушка"))
+    order2.addInformationToOrder(10002, listOf("Капуста", "Петрушка"))
 
 }
