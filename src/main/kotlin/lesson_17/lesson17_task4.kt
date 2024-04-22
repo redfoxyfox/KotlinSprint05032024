@@ -10,10 +10,13 @@ package lesson_17
 
 Сымитировать прибытие посылки в новый пункт обработки, протестировать изменение счетчика. При реализации использовать сеттер.*/
 
-class Parcel() {
-    val numberParcel: Int = 314159265
+class Parcel(
+    val _numberParcel: Int,
+    var _location: String,
+) {
+    val numberParcel: Int = _numberParcel
     var movementCounter: Int = 0
-    var location: String = "Москва"
+    var location: String = _location
         set(value) {
             if (value != field) movementCounter++
             field = value
@@ -22,7 +25,7 @@ class Parcel() {
 
 fun main() {
 
-    val parcel1 = Parcel()
+    val parcel1 = Parcel(53535, "Москва")
     println(parcel1.movementCounter)
     parcel1.location = "Рим"
     println(parcel1.movementCounter)
