@@ -10,30 +10,26 @@ package lesson_17
 
 Создай экземпляр “скрытой” папки. Протестируй попытку чтения ее данных.*/
 
-class Folder() {
+class Folder(
+    _nameFolder: String,
+    _numberOfFiles: Int,
+    _isSecret: Boolean,
+) {
 
-    var nameFolder: String = "Папка 1"
-        get() {
-            return if (isSecret) {
-                println("скрытая папка")
-                println("Количество файлов: $numberOfFiles")
-                "скрытая папка"
-            } else {
-                println(field)
-                println("Количество файлов: $numberOfFiles")
-                field
-            }
-        }
+    var nameFolder: String = _nameFolder
+        get() = if (isSecret) "скрытая папка" else field
 
-    var numberOfFiles: Int = 2
+    var numberOfFiles: Int = _numberOfFiles
         get() = if (isSecret) 0 else field
 
-    var isSecret: Boolean = true
+    var isSecret: Boolean = _isSecret
 }
 
 fun main() {
 
-    val folder1 = Folder()
-    folder1.nameFolder
+    val folder1 = Folder("Папка 1", 2, true)
+
+    println(folder1.nameFolder)
+    println(folder1.numberOfFiles)
 
 }
