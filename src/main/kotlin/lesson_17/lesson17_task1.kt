@@ -7,18 +7,23 @@ package lesson_17
 Явно пропиши для вопроса геттер, для ответа геттер и сеттер.*/
 
 
-class QuizElement() {
-    val question: String
-        get() = "Главный вопрос жизни, Вселенной и всего такого"
+class QuizElement(val question: String, var answer: String) {
+    val _question: String = question
+        get() = field
 
-    var answer: String = "42"
+    var _answer: String = answer
         get() = field
         set(value) {
-            if (value != "42") field = "Неправильный ответ!"
+            if (value != field) field = "Неправильный ответ!"
         }
 }
 
 fun main() {
 
+    val quizElement = QuizElement("Главный вопрос жизни, Вселенной и всего такого", "42")
+    println(quizElement._question)
+    println(quizElement._answer)
+    quizElement._answer = "2"
+    println(quizElement._answer)
 
 }
