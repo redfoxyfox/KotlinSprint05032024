@@ -9,9 +9,9 @@ package lesson_17
 Создай экземпляр класса и протестируй работу.*/
 
 class Ship(
-    var _nameShip: String,
-    val _averageSpeed: Int,
-    val _port: String,
+    _nameShip: String,
+    _averageSpeed: Int,
+    _port: String,
 
     ) {
     var nameShip: String = _nameShip
