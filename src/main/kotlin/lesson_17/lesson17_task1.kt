@@ -14,7 +14,8 @@ class QuizElement(val question: String, var answer: String) {
     var _answer: String = answer
         get() = field
         set(value) {
-            if (value != field) field = "Неправильный ответ!"
+            /*if (value != field) field = "Неправильный ответ!"*/
+            field = value
         }
 }
 
