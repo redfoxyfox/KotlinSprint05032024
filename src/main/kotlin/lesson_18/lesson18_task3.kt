@@ -12,8 +12,8 @@ package lesson_18
 – в цикле вызывай метод приема пищи для каждого экземпляра.*/
 
 interface AnimalActions {
-    fun eat() {}
-    fun sleep() {}
+    fun eat()
+    fun sleep()
 }
 
 abstract class Animal(
