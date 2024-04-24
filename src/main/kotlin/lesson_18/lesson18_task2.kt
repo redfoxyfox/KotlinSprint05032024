@@ -13,13 +13,13 @@ package lesson_18
 - собери из них список объектов, указав тип списка;
 - выполни итерацию по списку и вызови у каждого объекта метод броска кости.*/
 
-interface DiceRoll {
-    fun diceRoll() {}
-}
+
 
 open class Dice(
     open val numberSides: Int,
-) : DiceRoll
+) {
+    open fun diceRoll() {}
+}
 
 class DiceOfFourSided(
     override val numberSides: Int = 4,
