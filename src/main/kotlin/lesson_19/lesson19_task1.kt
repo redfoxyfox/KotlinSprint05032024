@@ -1,7 +1,5 @@
 package lesson_19
 
-import java.text.Format
-
 /*
 Задача 1 к Уроку 19
 
