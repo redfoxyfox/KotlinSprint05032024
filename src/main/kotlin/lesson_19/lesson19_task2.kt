@@ -41,7 +41,6 @@ class Product(
 
 }
 
-
 fun main() {
 
     val product1 = Product("Штаны", 101, Category.CLOTH)
