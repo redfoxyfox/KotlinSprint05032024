@@ -21,7 +21,7 @@ fun main() {
     println("Введите номер")
     try {
         val userNumber = readln().toLong()
-    } catch (e: Exception) {
+    } catch (e: NumberFormatException) {
         println(e.message)
         for (i in e.stackTrace)
             println(i)
