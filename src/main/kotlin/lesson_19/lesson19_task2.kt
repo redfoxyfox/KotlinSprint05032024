@@ -16,11 +16,11 @@ enum class Category {
     STATIONERY,
     VARIA;
 
-    fun returnCategory(category: Category) {
-        when (category) {
-            CLOTH -> println("Одежда")
-            STATIONERY -> println("Канцелярские товары")
-            VARIA -> println("Разное")
+    fun returnCategory(category: Category): String {
+        return when (category) {
+            CLOTH -> "Одежда"
+            STATIONERY -> "Канцелярские товары"
+            VARIA -> "Разное"
         }
     }
 
@@ -35,8 +35,7 @@ class Product(
     fun getInformation() {
         println(nameProduct)
         println(idProduct)
-
-        categoryProduct.returnCategory(categoryProduct)
+        println(categoryProduct.returnCategory(categoryProduct))
     }
 
 }
