@@ -18,9 +18,8 @@ class Ship(
         TODO("здесь нужна информация о дополнительной логике")
     }
 
-    fun makeLanding() {
-        TODO()
-    }
+    // TODO реализовать метод
+    fun makeLanding() {}
 
     fun shoot() {
         TODO()
@@ -29,7 +28,9 @@ class Ship(
 }
 
 fun main() {
-    
+
+    Ship("Тысячелетний сокол", 20).shoot()
+    Ship("Тысячелетний сокол", 20).leaveGround()
     Ship("Тысячелетний сокол", 20).makeLanding()
 
 }
