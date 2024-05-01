@@ -13,37 +13,23 @@ package lesson_18
 - собери из них список объектов, указав тип списка;
 - выполни итерацию по списку и вызови у каждого объекта метод броска кости.*/
 
-
-
 open class Dice(
     open val numberSides: Int,
 ) {
-    open fun diceRoll() {}
+    fun diceRoll() = println((1..numberSides).random())
 }
 
 class DiceOfFourSided(
     override val numberSides: Int = 4,
-) : Dice(numberSides) {
-
-    override fun diceRoll() = println((1..numberSides).random())
-
-}
+) : Dice(numberSides)
 
 class DiceOfSixSided(
     override val numberSides: Int = 6,
-) : Dice(numberSides) {
-
-    override fun diceRoll() = println((1..numberSides).random())
-
-}
+) : Dice(numberSides)
 
 class DiceOfEightSided(
     override val numberSides: Int = 8,
-) : Dice(numberSides) {
-
-    override fun diceRoll() = println((1..numberSides).random())
-
-}
+) : Dice(numberSides)
 
 fun main() {
 
