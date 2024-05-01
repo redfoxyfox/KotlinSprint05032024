@@ -18,9 +18,8 @@ enum class AmmunitionType {
     RED,
 }
 
-
 class Tank(
-    var ammunitionType: Int? = null
+    var ammunitionType: Int? = null,
 ) {
 
     fun selectAmmunitionType(ammunitionType: AmmunitionType) {
@@ -32,7 +31,11 @@ class Tank(
     }
 
     fun takeShot() {
-        println("Нанесён урон $ammunitionType")
+        if (ammunitionType == null) println("Зарядите орудие")
+        else {
+            println("Нанесён урон $ammunitionType")
+            ammunitionType = null
+        }
     }
 
 }
@@ -40,10 +43,13 @@ class Tank(
 fun main() {
 
     val tank1 = Tank()
+    tank1.takeShot()
     tank1.selectAmmunitionType(AmmunitionType.BLUE)
+    tank1.takeShot()
     tank1.takeShot()
     tank1.selectAmmunitionType(AmmunitionType.GREEN)
     tank1.takeShot()
     tank1.selectAmmunitionType(AmmunitionType.RED)
     tank1.takeShot()
+
 }
