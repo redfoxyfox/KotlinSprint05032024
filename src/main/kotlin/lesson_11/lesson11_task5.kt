@@ -30,9 +30,12 @@ class ForumMessage(
 )
 
 object Factory {
+    private var id = 1
+
     fun createNewUser(userName: String): ForumMember {
-        val id = (0..10).random()
-        return ForumMember(id, userName)
+        val forumMember = ForumMember(id, userName)
+        id++
+        return forumMember
     }
 
     fun createNewMessage(authorId: Int): ForumMessage {
@@ -44,15 +47,15 @@ object Factory {
 }
 
 class Forum(
-    val listMembers: MutableList<ForumMember> = mutableListOf(),
-    val listMessages: MutableList<ForumMessage> = mutableListOf(),
+    private val listMembers: MutableList<ForumMember> = mutableListOf(),
+    private val listMessages: MutableList<ForumMessage> = mutableListOf(),
 ) {
-    fun createNewUser1(userName: String) {
+    fun addNewUser(userName: String) {
         val newUser = Factory.createNewUser(userName)
         listMembers.add(newUser)
     }
 
-    fun createNewMessage1(authorId: Int) {
+    fun addNewMessage(authorId: Int) {
         for (i in listMembers) {
             if (i.userId == authorId)
                 listMessages.add(Factory.createNewMessage(authorId))
@@ -61,12 +64,19 @@ class Forum(
 
     fun printThread() {
 
-        for (i in 0..<listMessages.size) {
+        /*for (i in 0..<listMessages.size) {
             val name = listMessages[i].authorId
             for (j in 0..<listMembers.size) {
                 if (listMembers[j].userId == name) {
                     println("${listMembers[j].userName} : ${listMessages[i].message}")
                 }
+            }
+        }*/
+        val messagesGroupedByAuthor = listMessages.groupBy { it.authorId }
+        messagesGroupedByAuthor.forEach { (authorId, messages) ->
+            val authorName = listMembers.find { it.userId == authorId }?.userName ?: "Unknown"
+            messages.forEach { msg ->
+                println("$authorName: ${msg.message}")
             }
         }
     }
@@ -76,13 +86,13 @@ fun main() {
 
     val forum1 = Forum()
 
-    forum1.createNewUser1("Вася")
-    forum1.createNewUser1("Петя")
+    forum1.addNewUser("Вася")
+    forum1.addNewUser("Петя")
 
-    forum1.createNewMessage1(1)
-    forum1.createNewMessage1(1)
-    forum1.createNewMessage1(3)
-    forum1.createNewMessage1(3)
+    forum1.addNewMessage(1)
+    forum1.addNewMessage(1)
+    forum1.addNewMessage(2)
+    forum1.addNewMessage(2)
 
     forum1.printThread()
 }
