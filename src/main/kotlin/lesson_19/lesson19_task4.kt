@@ -19,21 +19,24 @@ enum class AmmunitionType {
 }
 
 class Tank(
-    var ammunitionType: Int? = null,
+    private var ammunitionType: AmmunitionType? = null,
+    private var ammunitionDamage: Int = 0,
 ) {
 
     fun selectAmmunitionType(ammunitionType: AmmunitionType) {
-        when (ammunitionType) {
-            AmmunitionType.BLUE -> this.ammunitionType = 5
-            AmmunitionType.GREEN -> this.ammunitionType = 10
-            AmmunitionType.RED -> this.ammunitionType = 20
+        this.ammunitionType = ammunitionType
+        when (this.ammunitionType) {
+            AmmunitionType.BLUE -> this.ammunitionDamage = 5
+            AmmunitionType.GREEN -> this.ammunitionDamage = 10
+            AmmunitionType.RED -> this.ammunitionDamage = 20
+            null -> println("tyht")
         }
     }
 
     fun takeShot() {
         if (ammunitionType == null) println("Зарядите орудие")
         else {
-            println("Нанесён урон $ammunitionType")
+            println("Нанесён урон $ammunitionDamage")
             ammunitionType = null
         }
     }
@@ -48,6 +51,7 @@ fun main() {
     tank1.takeShot()
     tank1.takeShot()
     tank1.selectAmmunitionType(AmmunitionType.GREEN)
+    tank1.takeShot()
     tank1.takeShot()
     tank1.selectAmmunitionType(AmmunitionType.RED)
     tank1.takeShot()
