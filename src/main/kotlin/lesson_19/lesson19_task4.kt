@@ -12,10 +12,10 @@ package lesson_19
 – экземпляр танка при создании ничем не заряжен;
  – в решении должен использоваться enum.*/
 
-enum class AmmunitionType {
-    BLUE,
-    GREEN,
-    RED,
+enum class AmmunitionType(val damage: Int) {
+    BLUE(5),
+    GREEN(10),
+    RED(20),
 }
 
 class Tank(
@@ -25,12 +25,7 @@ class Tank(
 
     fun selectAmmunitionType(ammunitionType: AmmunitionType) {
         this.ammunitionType = ammunitionType
-        when (this.ammunitionType) {
-            AmmunitionType.BLUE -> this.ammunitionDamage = 5
-            AmmunitionType.GREEN -> this.ammunitionDamage = 10
-            AmmunitionType.RED -> this.ammunitionDamage = 20
-            null -> println("tyht")
-        }
+        ammunitionDamage = ammunitionType.damage
     }
 
     fun takeShot() {
